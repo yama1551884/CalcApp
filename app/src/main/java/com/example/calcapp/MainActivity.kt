@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (editText1.text.isEmpty() || editText2.text.isEmpty()) {
             Snackbar.make(v!!, "数値を入力してください", Snackbar.LENGTH_LONG).show()
             return
+        } else if (editText1.text.toString() == "." || editText2.text.toString() == ".") {
+            Snackbar.make(v!!, "数値を入力してください", Snackbar.LENGTH_LONG).show()
+            return
+        } else if (v!!.id == R.id.button4 && editText2.text.toString() == "0") {
+            Snackbar.make(v!!, "0で割ることはできません", Snackbar.LENGTH_LONG).show()
+            return
         }
 
         var e: Double = 0.0
